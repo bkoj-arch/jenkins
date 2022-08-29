@@ -3,18 +3,18 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                echo "lol" 
+                bash "echo "lol"" 
             }
         }
         stage('Test') { 
             steps {
-                ls
+                bash "ls"
             }
         }
         stage('Deploy') { 
             steps {
-                pwd
-                echo "fin" 
+                bash "pwd"
+                bash "echo fin" 
             }
         }
     }
