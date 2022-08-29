@@ -22,7 +22,7 @@ pipeline {
 
     stage('DEPLOY') {
       steps {
-        sh 'cp target/*.war /var/lib/jenkins/deploy/'
+        sh 'cp target/*.war /var/lib/jenkins/deploy/spark.war'
       }
     }
 
