@@ -22,7 +22,6 @@ pipeline {
 
     stage('DEPLOY') {
       steps {
-        sh 'rm -r  /var/lib/jenkins/deploy/spark*'
         sh 'cp target/*.war /var/lib/jenkins/deploy/'
       }
     }
