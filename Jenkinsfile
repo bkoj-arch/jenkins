@@ -8,7 +8,6 @@ pipeline {
     }
 
     stage('POST BUILD') {
-      agent any
       steps {
         archiveArtifacts(artifacts: 'target/*.war', onlyIfSuccessful: true)
       }
