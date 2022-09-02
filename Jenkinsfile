@@ -10,14 +10,14 @@ pipeline {
     stage('POST BUILD') {
       agent any
       steps {
-        archiveArtifacts(artifacts: '*/*.war', onlyIfSuccessful: true)
+        archiveArtifacts(artifacts: 'target/*.war', onlyIfSuccessful: true)
       }
     }
 
     stage('DEPLOY') {
       steps {
-        sh 'cp target/*.war /var/lib/jenkins/deploy/spark.war'
-      }
+deploy adapters: [tomcat9(credentialsId: 'df4a9df4-8cea-49a1-998d-0ea7651ccc87', path: '', url: 'http://172.17.0.3:8080')], contextPath: '/spark', onFailure: false, war: '*/*.war'      
+	}
     }
 
   }
